@@ -10,7 +10,7 @@ function not_logined()
 	<input type=\"button\" name=\"submit\" text = \"ok\">
 	";
 }
-echo "<p>Your address: " . $_SERVER['HTTP_REMOTE_ADDR'] . "<p>";
+echo "<p>Your address: " . $_SERVER['REMOTE_ADDR'] . "<p>";
 if(!isset($_POST['']))
 {
 echo not_logined();
