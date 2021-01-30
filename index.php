@@ -1,18 +1,27 @@
 <?php
 echo "<p>Your address: " . $_SERVER['REMOTE_ADDR'] . "<p>"; 
-
+?>
+<?php
 function logined()
 {
-	return "Your token:" . $_SERVER['auth_key'] . "<br>" . "<p>Here your messages!<br></p>";
+	  ?>
+	  Your token: <?php $_SERVER['auth_key']?> <br> <p>Here your messages!<br></p>
+	  <form id="login">
+	  	<input type="submit" name="submit">
+	  </form>
+	  <?php
 }
+?>
+<?php
 function not_logined()
-{
-	return "
-	<form action=\"/\" method=\"POST\">
-	<input type=\"text\" name=\"key\">
-<input type=\"submit\" name=\"submit\" value = \"ok\">
-	</form>	
-	";
+{ 
+	?>
+	<form action="/" method="POST">
+	<input type="text" name="key">
+<input type="submit" name="submit" value = "ok">
+	</form>
+
+	<?php
 }
  ?>
 
@@ -29,23 +38,23 @@ if(!isset($_SERVER['auth_key']))
 {
 	if(!isset($_POST['key']))
 	{
-		echo not_logined();
+		not_logined();
 	}
 	else
 	{
 		$_SERVER['auth_key'] = $_POST['key'];
-		echo logined();
+		logined();
 	}
 }
 else
 {
-	echo logined();
+	logined();
 }
 ?>
 
 
 <script type="text/javascript">
-/*	
+	
 $(document).ready(function() 
 {
     $('#login').submit(function(e) 
@@ -63,7 +72,7 @@ $(document).ready(function()
         });
      });
 });
-*/
+
 </script>
 
 	
