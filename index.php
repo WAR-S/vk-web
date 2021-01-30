@@ -7,7 +7,7 @@ function not_logined()
 {
 	return "
 	<input type=\"text\" name=\"auth_key\">
-	<input type=\"button\" name=\"submit\" text = \"ok\">
+	<input type=\"button\" name=\"submit\" value = \"ok\" onclick=\"script.cgi \">
 	";
 }
 echo "<p>Your address: " . $_SERVER['REMOTE_ADDR'] . "<p>";
