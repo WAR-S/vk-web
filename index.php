@@ -10,7 +10,7 @@ function not_logined()
 	return "
 	<form id=\"login\" method=\"POST\">
 	<input type=\"text\" name=\"auth_key\">
-<input type=\"button\" name=\"submit\" value = \"ok\">
+<input type=\"submit\" name=\"submit\" value = \"ok\">
 	</form>	
 	";
 }
