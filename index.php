@@ -10,8 +10,8 @@ function not_logined()
 	return "
 	<form action=\"script.cgi\" method=\"POST\">
 	<input type=\"text\" name=\"auth_key\">
-	<input type=\"button\" name=\"submit\" text = \"ok\">
-	</form>
+<input type=\"button\" name=\"submit\" value = \"ok\" onclick=\"script.cgi \">
+	</form>	
 	";
 }
  ?>
