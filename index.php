@@ -8,7 +8,7 @@ function logined()
 function not_logined()
 {
 	return "
-	<form id=\"login\" method=\"POST\">
+	<form action=\"/\" method=\"POST\">
 	<input type=\"text\" name=\"key\">
 <input type=\"submit\" name=\"submit\" value = \"ok\">
 	</form>	
@@ -27,7 +27,15 @@ function not_logined()
 		<?php
 if(!isset($_SERVER['auth_key']))
 {
-echo not_logined();
+	if(!isset($_POST['key']))
+	{
+		echo not_logined();
+	}
+	else
+	{
+		$_SERVER['auth_key'] = $_POST['key'];
+		echo logined();
+	}
 }
 else
 {
@@ -37,7 +45,7 @@ else
 
 
 <script type="text/javascript">
-	
+/*	
 $(document).ready(function() 
 {
     $('#login').submit(function(e) 
@@ -46,7 +54,7 @@ $(document).ready(function()
         $.ajax
         ({
             type: "POST",
-            url: 'login.php',
+            url: 'index.php',
             data: $(this).serialize(),
             success: function(res) 
             {
@@ -55,7 +63,7 @@ $(document).ready(function()
         });
      });
 });
-
+*/
 </script>
 
 	
