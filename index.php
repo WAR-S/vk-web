@@ -5,7 +5,10 @@ function logined()
 }
 function not_logined()
 {
-	return ""
+	return "
+	<input type=\"text\" name=\"auth_key\">
+	<input type=\"button\" name=\"submit\" text = \"ok\">
+	";
 }
 echo "<p>Your address: " . $_SERVER['HTTP_REMOTE_ADDR'] . "<p>";
 if(!isset($_POST['']))
@@ -24,6 +27,6 @@ else
 	<title>vk-web</title>
 </head>
 <body>
-	<input type="text" name="auth_key">
+	
 </body>
 </html>
