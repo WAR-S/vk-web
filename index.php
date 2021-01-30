@@ -3,7 +3,7 @@ echo "<p>Your address: " . $_SERVER['REMOTE_ADDR'] . "<p>";
 
 function logined()
 {
-	return echo "Your token:" . $_SERVER['auth_key'] . "<br>" . "<p>Here your messages!<br></p>";
+	return "Your token:" . $_SERVER['auth_key'] . "<br>" . "<p>Here your messages!<br></p>";
 }
 function not_logined()
 {
