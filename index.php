@@ -3,13 +3,13 @@ echo "<p>Your address: " . $_SERVER['REMOTE_ADDR'] . "<p>";
 
 function logined()
 {
-	return "<p>Here your messages!<br></p>";
+	return echo "Your token:" . $_SERVER['auth_key'] . "<br>" . "<p>Here your messages!<br></p>";
 }
 function not_logined()
 {
 	return "
 	<form id=\"login\" method=\"POST\">
-	<input type=\"text\" name=\"auth_key\">
+	<input type=\"text\" name=\"key\">
 <input type=\"submit\" name=\"submit\" value = \"ok\">
 	</form>	
 	";
@@ -25,7 +25,7 @@ function not_logined()
 <body>
 
 		<?php
-if(!isset($_POST['auth_key']))
+if(!isset($_SERVER['auth_key']))
 {
 echo not_logined();
 }
@@ -37,6 +37,7 @@ else
 
 
 <script type="text/javascript">
+	
 $(document).ready(function() 
 {
     $('#login').submit(function(e) 
@@ -45,7 +46,7 @@ $(document).ready(function()
         $.ajax
         ({
             type: "POST",
-            url: 'login.cgi',
+            url: 'login.php',
             data: $(this).serialize(),
             success: function(res) 
             {
@@ -54,6 +55,7 @@ $(document).ready(function()
         });
      });
 });
+
 </script>
 
 	
